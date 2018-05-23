@@ -11,6 +11,7 @@ namespace MorseCode
     {
         static void Main(string[] args)
         {
+            var timeUnitInMilliSeconds = 100;
             var sequence = Enumerable.Range(0, 3).ToList();
             //while (true)
             {
