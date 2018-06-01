@@ -16,7 +16,23 @@
 
         public string GetSignalCode(SignalCodes code)
         {
-            return "";
+            switch (code)
+            {
+                case SignalCodes.StartingSignal:
+                    return SignalMorseCodes[0];
+                case SignalCodes.InvitationToTransmit:
+                    return SignalMorseCodes[1];
+                case SignalCodes.Understood:
+                    return SignalMorseCodes[2];
+                case SignalCodes.Error:
+                    return SignalMorseCodes[3];
+                case SignalCodes.Wait:
+                    return SignalMorseCodes[4];
+                case SignalCodes.EndOfWork:
+                    return SignalMorseCodes[5];
+                default:
+                    return string.Empty;
+            }
         }
 
         private static Dictionary<char, string> SymbolCodes = new Dictionary<char, string>

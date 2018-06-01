@@ -1,38 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace MorseCode
+﻿namespace MorseCode
 {
+    using static System.Console;
+
     class Program
     {
         static void Main(string[] args)
         {
-            var codes = new Codes();
-            Console.Write(codes['A']);
-            Console.WriteLine("▬_O.0●");
-            Console.WriteLine(".-...-..- .-.-...-- ---.-.-...-.----....__.");
- //           Console.WriteLine(".-...-.._ ._._...__ ___._._..._.____....__.");
+var modem = new Modem();
+var message = "Hello, I am AshV";
 
-            var sequence = Enumerable.Range(0, 3).ToList();
-            //while (true)
-            {
+// Converting to Morse Code
+var morseCode = modem.ConvertToMorseCode(message);
 
-                sequence.ForEach(e => Console.Beep(650, 100));
+WriteLine($"Morse Code for Sentence : {message}");
+WriteLine(morseCode);
 
-                Thread.Sleep(200);
+// Morse Code can be played with generated morse code
+WriteLine("Playing from Morse Code.");
+modem.PlayMorseTone(morseCode);
 
-                sequence.ForEach(e => Console.Beep(650, 1));
-
-                Thread.Sleep(200);
-
-                sequence.ForEach(e => Console.Beep(650, 100));
-
-                Thread.Sleep(500);
-            }
+// or Can be direactly played by passing sentence
+WriteLine("Playing from Message.");
+modem.PlayMorseTone(message);
         }
     }
 }
