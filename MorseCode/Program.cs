@@ -11,7 +11,12 @@ namespace MorseCode
     {
         static void Main(string[] args)
         {
-            var timeUnitInMilliSeconds = 100;
+            var codes = new Codes();
+            Console.Write(codes['A']);
+            Console.WriteLine("▬_O.0●");
+            Console.WriteLine(".-...-..- .-.-...-- ---.-.-...-.----....__.");
+ //           Console.WriteLine(".-...-.._ ._._...__ ___._._..._.____....__.");
+
             var sequence = Enumerable.Range(0, 3).ToList();
             //while (true)
             {
